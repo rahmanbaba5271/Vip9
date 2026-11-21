@@ -73,7 +73,7 @@ local GamePlayTools = require("GameLua.Mod.BaseMod.Common.GamePlayTools")
 local MatchModeIds = require("GameLua.Mod.BaseMod.GamePlay.Config.MatchModeIdsConfig")
 
 -- ============================================================================
--- FAHAD OFFLINE EXPIRY ACCESS (no panel, key input, or HTTP verification)
+-- VIPGROUP  OFFLINE EXPIRY ACCESS (no panel, key input, or HTTP verification)
 -- Expiry configuration + original welcome popup are below.
 -- Compatibility adapter: the existing Skin/Wall/ESP checks use LicenseValid.
 -- ============================================================================
@@ -1017,7 +1017,7 @@ _G.LexusConfig.IpadView = _G.LexusConfig.IpadView or false
 _G.LexusState = _G.LexusState or {}
 _G.LexusState.CustomTextData = _G.LexusState.CustomTextData or {}
 _G.LexusState.CustomTextData.IpadViewFOV = _G.LexusState.CustomTextData.IpadViewFOV or 120
--- [FAHAD MERGE] Skin-only config taken from the original 1.lua feature flags.
+-- [VIPGROUP  MERGE] Skin-only config taken from the original 1.lua feature flags.
 _G.LexusConfig = _G.LexusConfig or {}
 if _G.LexusConfig.ModEmote == nil then _G.LexusConfig.ModEmote = false end
 if _G.LexusConfig.SkinOpenLink == nil then _G.LexusConfig.SkinOpenLink = false end
@@ -1428,7 +1428,7 @@ do
     local WallColors={"Pink","White","Cyan","Green","Yellow","Saffron","Red"}
     for _,entry in ipairs({{"WallVisible","Visible color"},{"WallOccluded","Behind-wall color"}}) do
         local key,label=entry[1],entry[2]
-        WallStack[#WallStack+1]={Key="FAHAD"..key,UI=AliasMap.CompactSwitcher or AliasMap.Switcher,Text=label,
+        WallStack[#WallStack+1]={Key="VIPGROUP "..key,UI=AliasMap.CompactSwitcher or AliasMap.Switcher,Text=label,
             SwitcherText=WallColors,SwitcherValue={1,2,3,4,5,6,7},
             GetFunc=function() return _G.LunarFeatures and _G.LunarFeatures.Settings[key] or 1 end,
             SetFunc=function(c,v) return _G.LunarFeatures and _G.LunarFeatures.SetWallColor(key,v or c) end}
@@ -3743,7 +3743,7 @@ local function g_UXOfficial_ESPCreateCounter()
         return line
     end
 
-    -- FAHAD counter face: layered armored plates with a clear center divider.
+    -- VIPGROUP  counter face: layered armored plates with a clear center divider.
     -- The live counts, visibility toggles, and update cadence remain unchanged.
     local panelSteps=18
     local bandH=height/panelSteps
@@ -4155,7 +4155,7 @@ local function g_UXOfficial_ESPUpdateRadar(canvasW,canvasH,me,myLoc,items)
         yaw=math.rad(tonumber(rot.Yaw) or 0.0)
     end)
     local idx=1
-    -- FAHAD tactical radar UI: faceted octagonal instrument frame.
+    -- VIPGROUP  tactical radar UI: faceted octagonal instrument frame.
     -- Static frame colors are graphite/olive; target signal colors are defined
     -- separately below and remain fixed (green/yellow/red/blue + vehicle violet).
     local radarFrame=g_UXOfficial_ESPColor(0.52,0.68,0.28,0.98)
@@ -4802,7 +4802,7 @@ do
     end
     F.SetV2=function(key,value) return F.SetESP(2,key,value) end
 
-    -- [FAHAD MERGE] Wall controls update the original UI state.
+    -- [VIPGROUP  MERGE] Wall controls update the original UI state.
     F.SetWall=function(value)
       local on=value==true or value==1
       if settings.WallEnabled==on then return true end
@@ -4834,7 +4834,7 @@ do
     end
 end
 
--- [FAHAD MERGE] Original-style chams: cached DrawDyeing / Highlight / IdeaOutline.
+-- [VIPGROUP  MERGE] Original-style chams: cached DrawDyeing / Highlight / IdeaOutline.
 -- The existing ESP scheduler drives this; no new Wall timer.
 do
     local F=_G.LunarFeatures
@@ -6023,7 +6023,7 @@ end
 -- ORIGINAL GAME CLASS AND FEATURE REGISTRATION START
 -- Supplied native keys and paths appear once; existing unique additions follow.
 
--- [FAHAD MERGE] Original skin/wardrobe module (no unrelated donor functions).
+-- [VIPGROUP  MERGE] Original skin/wardrobe module (no unrelated donor functions).
 function _G.__FAHADInstallSkinCore()
 -- ================= BẮT ĐẦU CORE ADD-OUTFIT V7.5 (HỆ THỐNG SKIN) =================
 -- ==============================================================================
@@ -6569,7 +6569,7 @@ local ITEMS = {
     1961018, -- Koenigsegg Jesko (Bình Minh)
 -- 𝓓𝓾𝓶𝓹 𝓫𝔂 𝓢𝓱𝓪𝓭𝓸𝔀 𝓣𝓖 𝓢𝓗𝓓_𝓒𝓗𝓣
     1961029, -- Koenigsegg One:1 Gilt
-    1961030, -- Koenigsegg One:1 Cyber FAHAD
+    1961030, -- Koenigsegg One:1 Cyber VIPGROUP 
     1961031, -- Koenigsegg One:1 Jade
     1961032, -- Koenigsegg One:1 Phoenix
     1903074, -- Koenigsegg Gemera (Xám Bạc)
@@ -6582,7 +6582,7 @@ local ITEMS = {
     1961024, -- Lamborghini Aventador SVJ Blue
     1961025, -- Lamborghini Centenario Carbon Fiber
     1961144, -- Lamborghini Invencible Rosso Efesto
-    1961145, -- Lamborghini Invencible FAHAD Drift
+    1961145, -- Lamborghini Invencible VIPGROUP  Drift
     1903079, -- Lamborghini Estoque Oro
     1903080, -- Lamborghini Estoque Metal Grey
     1908066, -- Lamborghini Urus Pink
@@ -6615,7 +6615,7 @@ local ITEMS = {
     1961053, -- Pagani Zonda R (Melodic Midnight)
     1961054, -- Pagani Imola (Grigio Montecarlo)
     1961055, -- Pagani Imola (Crystal Clear Carbon)
-    1961056, -- Pagani Imola (FAHAD Dream)
+    1961056, -- Pagani Imola (VIPGROUP  Dream)
     1961057, -- Pagani Imola (Arctic Aegis)
 
 -- 𝔇𝔲𝔪𝔭 𝔟𝔶 𝔖𝔥𝔞𝔡𝔬𝔴 𝔗𝔊 𝔖ℌ𝔇_ℭℌ𝔗
@@ -14871,7 +14871,7 @@ end)
 end -- original skin module
 pcall(_G.__FAHADInstallSkinCore)
 
--- [FAHAD MERGE] Original Skin-category emote toggle backend.
+-- [VIPGROUP  MERGE] Original Skin-category emote toggle backend.
 -- ================= BẮT ĐẦU LOGIC MOD EMOTE (CHỈ INGAME - 0% DROP FPS) =========
 -- ==============================================================================
 pcall(function()
@@ -15028,7 +15028,7 @@ end)
 -- ============================================================
 
 
--- [FAHAD MERGE] Single slow wardrobe match refresher, gated on license and Skin ON.
+-- [VIPGROUP  MERGE] Single slow wardrobe match refresher, gated on license and Skin ON.
 do
   local ok,ticker=pcall(require,"common.time_ticker")
   if ok and ticker and type(ticker.AddTimerLoop)=="function" then
@@ -15057,7 +15057,7 @@ end
 
 
 -- ============================================================================
--- ORIGINAL FAHAD OFFLINE EXPIRY (editable date below)
+-- ORIGINAL VIPGROUP  OFFLINE EXPIRY (editable date below)
 -- Change only EXPIRY_TIMESTAMP's year/month/day/hour/min/sec values.
 -- ============================================================================
 -- ============================================================================
@@ -15098,12 +15098,12 @@ local function ShowExpiryPopup(expired)
         local header = "✦ VIP PAID GUROP /    ✦\n╔══════════════════════════╗\n   FEED BACK LAZMI DEYA KARY     \n╚══════════════════════════╝"
         if expired then
             local body = header .. "\n\n▰ ACCESS GATE  /  LOCKED\n\nSTATUS       :  EXPIRED\nVALIDITY     :  ENDED\nRECORD       :  " .. stamp .. "\n\nYour access period has ended.\nContact the official support channel\nfor renewal information.\n\n┏━━ SUPPORT CHANNEL ━━┓\n   @PRIME\n┗━━━━━━━━━━━━━━━━━━━━━┛\n\nPRIME  •  ACCESS CONTROL"
-            Msg.Show(4, "✦   FAHAD  |  ACCESS LOCKED", body, onClick)
+            Msg.Show(4, "✦   VIPGROUP   |  ACCESS LOCKED", body, onClick)
         else
             local remaining = _G._MOD_REMAINING_SECONDS or (EXPIRY_TIMESTAMP - os.time())
             local formatted = FormatTimeRemaining(remaining)
             local body = header .. "\n\n▰ ACCESS GATE  /  VERIFIED\n\nSTATUS       :  ACTIVE\nTIME LEFT    :  " .. formatted .. "\nVALID UNTIL  :  " .. stamp .. "\n\nAll interface modules are initialized.\nChoose ENTER to open the control suite.\n\n┏━━ OFFICIAL SUPPORT ━━┓\n   @PRIME\n┗━━━━━━━━━━━━━━━━━━━━━┛\n\nPRIME  •  SECURE SESSION"
-            Msg.Show(4, "✦   FAHAD  |  LIVE ACCESS", body, onClick)
+            Msg.Show(4, "✦   VIPGROUP   |  LIVE ACCESS", body, onClick)
         end
     end)
 end
@@ -15128,7 +15128,7 @@ function ShowLexusVIPMenu()
         if not Msg or not Msg.Show then return end
 
         local function Step_FieldNotice()
-            Msg.Show(1, "✦  PRIME  |  FIELD BRIEF", "✦  PRIME  /   FAHAD\n╔══════════════════════════╗\n        PILOT BRIEFING\n╚══════════════════════════╝\n\n01  /  PLAY RESPONSIBLY\n02  /  PROTECT YOUR ACCOUNT\n03  /  USE OFFICIAL SUPPORT\n\n┏━━ OFFICIAL CHANNEL ━━┓\n   @PRIME\n┗━━━━━━━━━━━━━━━━━━━━━┛\n\nPRIME  •  BRIEF 01",
+            Msg.Show(1, "✦  PRIME  |  FIELD BRIEF", "✦  PRIME  /   VIPGROUP \n╔══════════════════════════╗\n        PILOT BRIEFING\n╚══════════════════════════╝\n\n01  /  PLAY RESPONSIBLY\n02  /  PROTECT YOUR ACCOUNT\n03  /  USE OFFICIAL SUPPORT\n\n┏━━ OFFICIAL CHANNEL ━━┓\n   @PRIME\n┗━━━━━━━━━━━━━━━━━━━━━┛\n\nPRIME  •  BRIEF 01",
                 function()
                     local ok, Web = pcall(require, "client.slua.logic.url.logic_webview_sdk")
                     if ok and Web and Web.OpenURL then Web:OpenURL("PRIME") end
@@ -15140,7 +15140,7 @@ function ShowLexusVIPMenu()
         end
 
         local function Step_Welcome()
-            Msg.Show(1, "✦  PRIME  |  FAHAD ACCESS", "╔══════════════════════════╗\n       FAHAD BHAIE\n╚══════════════════════════╝\n\n✦  ACCESS GRANTED\n\nEDITION      :   FAHAD\nINTERFACE    :  READY\nMODULES      :  INITIALIZED\n\nYour control suite is ready.\nPress ENTER to continue.\n\n┏━━ OFFICIAL SUPPORT ━━┓\n   @PRIME\n┗━━━━━━━━━━━━━━━━━━━━━┛\n\nPRIME  •   PREMIUM BUILD",
+            Msg.Show(1, "✦  PRIME  |  VIPGROUP  ACCESS", "╔══════════════════════════╗\n       VIPGROUP  BHAIE\n╚══════════════════════════╝\n\n✦  ACCESS GRANTED\n\nEDITION      :   VIPGROUP \nINTERFACE    :  READY\nMODULES      :  INITIALIZED\n\nYour control suite is ready.\nPress ENTER to continue.\n\n┏━━ OFFICIAL SUPPORT ━━┓\n   @PRIME\n┗━━━━━━━━━━━━━━━━━━━━━┛\n\nPRIME  •   PREMIUM BUILD",
                 function()
                     if _G.InitModMenuTab then _G.InitModMenuTab() end
                     if Notify then Notify("PRIME   •  PRIME READY") end
